@@ -6,7 +6,7 @@
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 19:08:00 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/23 19:26:04 by bmaluend         ###   ########.fr       */
+/*   Updated: 2024/12/23 20:45:25 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	if (b != 0)
-	{
-		*div = a / b;
-		*mod = a % b;
-	}
-	else
-	{
-		write(1, "Error: Division por cero.\n", 26);
-	}
+	*div = a / b;
+	*mod = a % b;
 }

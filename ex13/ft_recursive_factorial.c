@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 20:16:55 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/23 20:42:15 by bmaluend         ###   ########.fr       */
+/*   Created: 2024/12/30 18:44:54 by bmaluend          #+#    #+#             */
+/*   Updated: 2024/12/30 19:14:15 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c);
-
-void	ft_is_negative(int n)
+int	ft_recursive_factorial(int nb)
 {
-	if (n < 0)
-		ft_putchar('N');
-	else
-		ft_putchar('P');
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	return (nb * ft_recursive_factorial(nb - 1));
 }

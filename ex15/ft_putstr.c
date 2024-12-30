@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 20:16:55 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/23 20:42:15 by bmaluend         ###   ########.fr       */
+/*   Created: 2024/12/30 19:19:44 by bmaluend          #+#    #+#             */
+/*   Updated: 2024/12/30 19:20:01 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-void	ft_is_negative(int n)
-{
-	if (n < 0)
-		ft_putchar('N');
-	else
-		ft_putchar('P');
-}
+#include <stdio.h>

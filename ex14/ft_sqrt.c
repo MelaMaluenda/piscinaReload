@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/20 20:16:55 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/23 20:42:15 by bmaluend         ###   ########.fr       */
+/*   Created: 2024/12/30 19:15:43 by bmaluend          #+#    #+#             */
+/*   Updated: 2024/12/30 19:55:58 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c);
-
-void	ft_is_negative(int n)
+int	ft_sqrt(int nb)
 {
-	if (n < 0)
-		ft_putchar('N');
-	else
-		ft_putchar('P');
+	int	counter;
+
+	counter = 0;
+	if (nb < 0)
+		return (0);
+	while (counter * counter <= nb)
+	{
+		if (counter * counter == nb)
+		{
+			return (counter);
+		}
+		counter++;
+	}
+	return (0);
 }

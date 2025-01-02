@@ -6,8 +6,20 @@
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 19:20:25 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/30 19:20:38 by bmaluend         ###   ########.fr       */
+/*   Updated: 2025/01/02 19:37:58 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
+int	ft_strlen(char *str)
+{
+	int	counter;
+
+	counter = 0;
+	while (str[counter] != '\0')
+	{
+		counter++;
+	}
+	return (counter);
+}

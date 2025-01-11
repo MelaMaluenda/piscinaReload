@@ -6,7 +6,7 @@
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 19:23:26 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/01/09 16:16:37 by bmaluend         ###   ########.fr       */
+/*   Updated: 2025/01/09 17:00:13 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,4 @@ int	*ft_range(int min, int max)
 		min++;
 	}
 	return (arr);
-}
-
-int	main(void)
-{
-	int	min;
-	int	max;
-	int	counter;
-	int	*arr;
-
-	min = 3;
-	max = 10;
-	arr = ft_range(min, max);
-	if (arr == NULL)
-	{
-		printf("Error: NULL.\n");
-	}
-	else
-	{
-		counter = 0;
-		while (counter < max - min)
-		{
-			printf("%d ", arr[counter]);
-			counter++;
-		}
-		printf("\n");
-		free(arr);
-	}
-	return (0);
 }

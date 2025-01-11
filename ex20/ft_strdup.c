@@ -6,51 +6,34 @@
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 19:22:56 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/01/09 14:23:18 by bmaluend         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:43:29 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
+
+int	ft_strlen(char	*str)
+{
+	int	counter;
+
+	counter = 0;
+	while (str[counter] != '\0')
+		++counter;
+	return (counter);
+}
 
 char	*ft_strdup(char *src)
 {
-	int		counter;
-	int		iteration;
 	char	*duplicate;
+	int		i;
 
-	counter = 0;
-	while (src[counter] != '\0')
-	{
-		counter++;
-	}
-	duplicate = (char *)malloc(counter + 1);
+	i = ft_strlen(src);
+	duplicate = (char *)malloc(sizeof(char) * (i + 1));
 	if (duplicate == NULL)
-	{
-		return (NULL);
-	}
-	while (iteration <= src[iteration])
-	{
-		duplicate[iteration] = src[iteration];
-		iteration++;
-	}
+		return (0);
+	i = -1;
+	while (src[++i])
+		duplicate[i] = src[i];
+	duplicate[i] = '\0';
 	return (duplicate);
-}
-
-int	main(void)
-{
-	char	*original;
-	char	*dup;
-
-	original = "Test";
-	dup = ft_strdup(original);
-	if (dup == NULL)
-	{
-		printf("Error: NULL");
-		return (1);
-	}
-	printf("Original: %s\n", original);
-	printf("Duplicada: %s\n", dup);
-	free (dup);
-	return (0);
 }

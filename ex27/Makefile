@@ -5,35 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/12/30 19:25:03 by bmaluend          #+#    #+#              #
-#    Updated: 2025/01/11 15:42:08 by bmaluend         ###   ########.fr        #
+#    Created: 2025/01/11 15:19:27 by bmaluend          #+#    #+#              #
+#    Updated: 2025/01/11 15:21:25 by bmaluend         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIB = libft.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+NAME = ft_display_file
+CC = cc
+CFLAGS= -Wall -Wextra -Werror
+SRCS_DIR = srcs
+SRCS = srcs/main.c srcs/util.c
+OBJS_DIR = $(SRCS_DIR)
+OBJS = $(patsubst $(SRCS_DIR)/%.c, $(OBJS_DIR)/%.o, $(SRCS))
+RM = rm -f
 
+all : $(NAME)
 
-SRC_DIR = srcs
-SRC = ft_putchar.c ft_putstr.c ft_strcmp.c ft_strlen.c ft_swap.c
-OBJ = $(SRC:.c=.o)
-OBJ_DIR = $(SRC_DIR)
-OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ))
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-all: $(LIB)
-
-$(LIB): $(OBJS) 
-	ar rcs $(LIB) $(OBJS)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJS_DIR)/%.o : $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
-	rm -f $(OBJS)
+clean :
+	$(RM) $(OBJS)
 
-fclean: clean
-	rm -f $(LIB)
+fclean : clean
+	$(RM) $(NAME)
 
 re: fclean all
 

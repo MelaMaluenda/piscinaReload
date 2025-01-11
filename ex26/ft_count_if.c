@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_counter_if.c                                    :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 19:27:14 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/01/09 19:28:20 by bmaluend         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:29:47 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,16 @@
 
 int	ft_count_if(char **tab, int (*f)(char*))
 {
-	int	counter;
+	int	i;
 	int	count;
 
-	counter = 0;
+	i = 0;
 	count = 0;
-	while (tab[counter] != NULL)
+	while (tab[i] != 0)
 	{
-		if (f(tab[counter]) == 1)
-		{
+		if (f(tab[i]))
 			count++;
-		}
-		counter++;
+		i++;
 	}
 	return (count);
-}
-
-int	is_longer_than_3(char *str)
-{
-	int	length;
-
-	length = 0;
-	while (str[length] != '\0')
-		length++;
-	return (length > 3);
-}
-
-int	main(void)
-{
-	char	*tab[] = {"hello", "world", "hi", "42", NULL};
-	int	result;
-
-	result = ft_count_if(tab, &is_longer_than_3);
-	printf("Count: %d\n", result);
-	return (0);
 }

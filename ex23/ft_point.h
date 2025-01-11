@@ -6,8 +6,17 @@
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 19:24:30 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/30 19:24:44 by bmaluend         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:57:57 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
+
+typedef struct s_point
+{
+	int	x;
+	int	y;
+}	t_point;
+
+#endif

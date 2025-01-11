@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 19:26:37 by bmaluend          #+#    #+#             */
-/*   Updated: 2025/01/09 19:10:02 by bmaluend         ###   ########.fr       */
+/*   Created: 2025/01/11 15:15:30 by bmaluend          #+#    #+#             */
+/*   Updated: 2025/01/11 15:19:13 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+void	display_file(int fd)
 {
-	int	counter;
+	ssize_t	read_bytes;
+	char	buffer[1025];
 
-	counter = 0;
-	if (tab == NULL || length <= 0)
-		return ;
-	while (counter < length)
+	read_bytes = read(fd, buffer, 1024);
+	while (read_bytes > 0)
 	{
-		f(tab[counter]);
-		counter++;
+		write(1, buffer, read_bytes);
+		read_bytes = read(fd, buffer, 1024);
 	}
 }

@@ -6,8 +6,13 @@
 /*   By: bmaluend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 19:24:00 by bmaluend          #+#    #+#             */
-/*   Updated: 2024/12/30 19:24:10 by bmaluend         ###   ########.fr       */
+/*   Updated: 2025/01/11 13:55:39 by bmaluend         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
+
+# define ABS(arg) ((arg < 0) ? -(arg) : (arg))
+
+#endif	
